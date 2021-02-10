@@ -38,7 +38,7 @@ namespace Assignment4_Restaurants.Controllers
                 }
 
                 int? rank = r.Rank;
-                restaurantList.Add($"#{r.Rank}: {r.Name}<br>Address: {r.FavDish}<br>Fav Dish: ({r.FavDish})<br>Phone: {r.Phone}<br>Website: {r.Website}");
+                restaurantList.Add($"#{r.Rank}: {r.Name}<br>Address: {r.Address}<br>Fav Dish: {r.FavDish}<br>Phone: {r.Phone}<br>Website: {r.Website}");
             }
 
             return View(restaurantList);
