@@ -22,11 +22,12 @@ namespace Assignment4_Restaurants.Models
         public string Name { get; set; }
 
         #nullable enable
-        public string? FavDish { get; set; }
-        
+        public string? FavDish { get; set; } = "It's all tasty!";
+
         [Required]
         public string Address { get; set; }
 
+        //Validate the phone number
         [RegularExpression(@"^(\d{3})[ -]?(\d{3})[ -]?(\d{4}) x(\d*)", ErrorMessage = "Please re-enter your phone number in the format (123) 456-7890")]
         public string Phone { get; set; }
 
@@ -49,7 +50,6 @@ namespace Assignment4_Restaurants.Models
             {
                 Rank = 2,
                 Name = "Don Chuy's",
-                FavDish = "Taco Combo Meal",
                 Address = "520 900 E, Provo, UT 84606",
                 Phone = "(801) 607-1519",
                 Website = "https://www.donchuys.com/"
@@ -82,6 +82,7 @@ namespace Assignment4_Restaurants.Models
                 Website = "https://dining.byu.edu/creamery/"
             };
 
+            //Return an array of objects
             return new Restaurants[] { R1, R2, R3, R4, R5 };
         }
     }

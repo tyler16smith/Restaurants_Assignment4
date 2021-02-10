@@ -11,6 +11,7 @@
     <ul class="list-group">
         @foreach (string rest in Model)
         {
+            //Display the raw html to enable return carriages
             <li class="list-group-item">@Html.Raw(rest)</li>
         }
     </ul>

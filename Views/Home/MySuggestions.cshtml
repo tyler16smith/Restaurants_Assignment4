@@ -16,8 +16,15 @@
             <th>Phone</th>
         </thead>
         <tbody>
+            @*Display the models, enumerating on each added submission*@
             @foreach (Assignment4_Restaurants.Models.NewRestaurants rest in Model)
             {
+                //Ensure there are no blanks, replace with phrase
+                if(@rest.FavDish is null)
+                {
+                    rest.FavDish = "It's all tasty!";
+                }
+
                 <tr class="d-table-row">
                     <td>@rest.Name</td>
                     <td>@rest.RestName</td>

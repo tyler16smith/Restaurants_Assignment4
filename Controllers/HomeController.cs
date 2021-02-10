@@ -29,7 +29,7 @@ namespace Assignment4_Restaurants.Controllers
             // create list object
             List<string> restaurantList = new List<string>();
 
-            // format the data
+            // format the data into a string
             foreach (Restaurants r in Models.Restaurants.GetList())
             {
                 if (r.FavDish == "")
@@ -53,6 +53,7 @@ namespace Assignment4_Restaurants.Controllers
         [HttpPost]
         public IActionResult NewRestaurants(NewRestaurants appResponse)
         {
+            //Validate no errors in the model
             if (ModelState.IsValid)
             {
                 AllRestaurants.AddApplication(appResponse);
