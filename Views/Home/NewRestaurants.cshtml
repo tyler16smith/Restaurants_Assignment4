@@ -1,0 +1,31 @@
+﻿@{ 
+    ViewBag.Title = "New Restaurants";
+}
+
+@model Assignment4_Restaurants.Models.NewRestaurants
+
+<div>
+
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <h1>Suggest New Restaurant</h1>
+    <p>Enter a new restaurant in the spaces below!</p>
+
+    @*Form for inputing restaurant information*@
+<form class="table" asp-action="NewRestaurants" method="post">
+
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" /><br /><br />
+
+    <label asp-for="RestName">Restaurant Name</label>
+    <input asp-for="RestName" /><br /><br />
+
+    <label asp-for="FavDish">Favorite Dish</label>
+    <input asp-for="FavDish" /><br /><br />
+
+    <label asp-for="Phone">Phone</label>
+    <input asp-for="Phone" /><br /><br /><br />
+
+    <button type="submit" class="btn btn-primary">Save Restaurant</button><br /><br />
+    <div asp-validation-summary="All" class="text-danger"></div>
+</form>
+</div>
