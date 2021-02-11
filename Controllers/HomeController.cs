@@ -32,13 +32,11 @@ namespace Assignment4_Restaurants.Controllers
             // format the data into a string
             foreach (Restaurants r in Models.Restaurants.GetList())
             {
-                if (r.FavDish == "")
-                {
-                    r.FavDish = "It's all tasty!";
-                }
+                //Display message if FavDish is null
+                string? favDish = r.FavDish ?? "It's all tasty";
 
                 int? rank = r.Rank;
-                restaurantList.Add($"#{r.Rank}: {r.Name}<br>Address: {r.Address}<br>Fav Dish: {r.FavDish}<br>Phone: {r.Phone}<br>Website: {r.Website}");
+                restaurantList.Add($"#{r.Rank}: {r.Name}<br>Address: {r.Address}<br>Fav Dish: {favDish}<br>Phone: {r.Phone}<br>Website: {r.Website}");
             }
 
             return View(restaurantList);

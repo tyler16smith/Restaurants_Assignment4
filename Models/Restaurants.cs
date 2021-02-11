@@ -22,7 +22,7 @@ namespace Assignment4_Restaurants.Models
         public string Name { get; set; }
 
         #nullable enable
-        public string? FavDish { get; set; } = "It's all tasty!";
+        public string? FavDish { get; set; }
 
         [Required]
         public string Address { get; set; }
